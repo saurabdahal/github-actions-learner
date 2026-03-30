@@ -1,0 +1,52 @@
+############################
+# OS / editor junk
+############################
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.swp
+*.swo
+*~
+
+.vscode/
+.idea/
+.history/
+
+############################
+# Node / JavaScript
+############################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+############################
+# Python
+############################
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+
+############################
+# Build / dist artifacts
+############################
+dist/
+build/
+out/
+coverage/
+
+############################
+# Local environment
+############################
+.env
+.env.*
+!.env.example
+
