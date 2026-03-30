@@ -1,27 +1,21 @@
 name: Manual qa deployment
 
 on:
-  workflow_dispatch:
-    inputs:
-      target_env:
-        description: "Choose deployment environment"
-        required: true
-        type: choice
-        options:
-          - qa
-          - prod
-
+  push:
+    branches:
+      - main
+  pull_request:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.target_env }}
+    environment: qa
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Show target
-        run: echo "Deploying to ${{ inputs.target_env }}"
+        run: echo "Deploying to qa"
 
       - name: Simulated deploy
         run: echo "Deploy successful"
