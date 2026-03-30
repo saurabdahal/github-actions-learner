@@ -3,7 +3,7 @@ name: Manual qa deployment
 on:
   workflow_dispatch:
     inputs:
-      target_env:
+      environment:
         description: "Choose deployment environment"
         required: true
         type: choice
@@ -14,14 +14,14 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: ${{ inputs.target_env }}
+    environment: ${{ inputs.environment }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Show target
-        run: echo "Deploying to ${{ inputs.target_env }}"
+        run: echo "Deploying to ${{ inputs.environment }}"
 
       - name: Simulated deploy
         run: echo "Deploy successful"
